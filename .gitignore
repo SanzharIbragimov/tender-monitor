@@ -1,0 +1,10 @@
+.env
+data/
+*.db
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+demo_digest.html
+quality_report.md
+*.csv

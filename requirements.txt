@@ -1,0 +1,7 @@
+httpx==0.28.1          # BSD-3-Clause
+beautifulsoup4==4.15.0 # MIT
+Jinja2==3.1.6          # BSD-3-Clause
+PyYAML==6.0.3          # MIT
+APScheduler==3.11.3    # MIT
+tzdata                 # Apache-2.0, часовые пояса в контейнере
+pytest==9.1.1          # MIT, только для тестов

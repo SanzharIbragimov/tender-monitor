@@ -1,0 +1,110 @@
+# Настройки сервиса. Секреты (токены, SMTP, ключ LLM) — только в переменных окружения (.env).
+timezone: Asia/Almaty        # время Астаны
+lookback_days: 2             # за сколько дней забирать новые объявления при каждом запуске
+db_path: data/tenders.db
+
+sources:
+  goszakup:
+    type: goszakup
+    enabled: true
+    endpoint: https://ows.goszakup.gov.kz/v3/graphql
+    page_size: 200
+    max_pages: 50
+    delay_sec: 1.0
+
+  # Порталы без API: селекторы заполняются на этапе 1 после проверки страниц и robots.txt.
+  # JSON-эндпоинт, который вызывает сам сайт. Включить после сверки параметров в DevTools.
+  zakup_sk:
+    type: zakup_sk
+    enabled: false
+    site: https://zakup.sk.kz
+    search_path: /eprocsearch/api/external/4dv3rts/filter
+    statuses: [PUBLISHED, DISCUSSION_PUBLISHED]
+    query: ""
+    page_size: 50
+    page_params: { page: "{page}", size: "{size}" }   # сверить имена параметров
+    extra_body: {}
+    respect_robots: true
+    delay_sec: 2.0
+    max_pages: 20
+    fields:                    # список ключей-кандидатов; сверить с реальным ответом
+      id: [number]
+      title: [nameRu, name, title]
+      organizer: [customerNameRu, customerName, organizerName]
+      published: [publishDate, startDate]
+      deadline: [endDate, acceptanceEndDate]
+      budget: [sum, amount, totalSum]
+
+  nadloc:
+    type: html
+    enabled: false
+    list_url: https://nadloc.kz/ru/tenders?page={page}               # уточнить
+    respect_robots: true
+    delay_sec: 2.0
+    max_pages: 5
+    selectors: { item: "TODO", title: "TODO", id: "", link: "a", organizer: "", deadline: "", budget: "" }
+
+scoring:
+  prefilter_threshold: 10    # ниже — лот не уходит в LLM (экономия), выше — оценивает LLM
+  enstru_bonus: 30
+  enstru_prefixes: ["6201", "6202", "6203", "6209", "6311", "5829"]   # ИТ-группы ЕНС ТРУ, уточнить
+  llm:
+    enabled: true            # без ANTHROPIC_API_KEY работает только по правилам
+    model: claude-haiku-5-5
+    max_description_chars: 3000
+
+  directions:
+    boxed:
+      name: Коробочные решения
+      description: поставка, настройка и внедрение готовых программных продуктов и платформ
+      keywords:
+        внедрен: 25
+        лицензи программн: 30
+        программн обеспечен: 25
+        настройк систем: 20
+        платформ: 15
+        бағдарламалық қамтамасыз: 25
+        енгізу: 20
+    development:
+      name: Разработка
+      description: заказная разработка ПО, информационных систем, веб- и мобильных приложений, интеграций
+      keywords:
+        разработк: 30
+        информационн систем: 30
+        модернизац информационн: 30
+        веб портал: 25
+        интернет ресурс: 20
+        мобильн приложен: 30
+        интеграци: 20
+        сопровожден систем: 25
+        әзірлеу: 30
+        ақпараттық жүйе: 30
+    staffing:
+      name: Предоставление персонала
+      description: привлечение разработчиков, тестировщиков, аналитиков, администраторов, поддержки
+      keywords:
+        аутстаф: 40
+        аутсорс: 25
+        техническ поддержк: 25
+        администрирован: 20
+        тестирован программн: 25
+        привлечен специалист: 30
+        сүйемелдеу: 20
+
+  stop_words:                # слово: штраф
+    канцеляр: 50
+    картридж: 50
+    заправк: 50
+    ремонт оргтехник: 50
+    мебел: 50
+    бумаг: 30
+    услуги связи: 40
+    доступ к сети интернет: 40
+
+digest:
+  send_at: "08:00"
+  threshold: 60              # минимальная оценка для попадания в дайджест
+  max_lots: 20
+  urgent_days: 3             # «горящие» сроки выделяются отдельно
+  recipients: ["sales@example.com"]
+  alert_to: ["admin@example.com"]

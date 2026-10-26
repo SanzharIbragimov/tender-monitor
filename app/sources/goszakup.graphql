@@ -1,0 +1,30 @@
+# OWS v3, сверено со схемой (интроспекция). Лоты берутся по indexDate —
+# дате попадания записи в индекс OWS, поэтому ловятся и новые лоты, и изменения.
+# Пагинация: extensions.pageInfo { hasNextPage, lastId } → after.
+query Lots($filter: LotsFiltersInput, $limit: Int, $after: Int) {
+  Lots(filter: $filter, limit: $limit, after: $after) {
+    id
+    lotNumber
+    nameRu
+    nameKz
+    descriptionRu
+    descriptionKz
+    amount
+    customerNameRu
+    trdBuyId
+    trdBuyNumberAnno
+    refLotStatusId
+    isDeleted
+    Plans { refEnstruCode }
+    TrdBuy {
+      id
+      numberAnno
+      nameRu
+      orgNameRu
+      publishDate
+      endDate
+      kato
+      RefBuyStatus { nameRu }
+    }
+  }
+}

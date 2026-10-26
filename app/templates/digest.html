@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Тендеры ИТ {{ date }}</title></head>
+<body style="margin:0;padding:24px;background:#f5f5f4;font-family:Arial,Helvetica,sans-serif;color:#1c1917">
+<div style="max-width:720px;margin:0 auto;background:#fff;border-radius:8px;padding:24px">
+  <h1 style="font-size:20px;margin:0 0 4px">Тендеры и RFP на ИТ-услуги</h1>
+  <p style="margin:0 0 20px;color:#57534e;font-size:14px">{{ date }} · подходящих лотов: {{ total }}</p>
+
+  {% if total == 0 %}
+    <p style="font-size:14px">Сегодня подходящих лотов нет. Сбор по всем источникам выполнен.</p>
+  {% endif %}
+
+  {% macro card(l) %}
+  <div style="border:1px solid #e7e5e4;border-radius:8px;padding:14px 16px;margin:0 0 12px">
+    <div style="font-size:12px;color:#57534e;margin-bottom:6px">
+      <b style="color:#fff;background:{% if l.score >= 80 %}#15803d{% elif l.score >= 60 %}#2563eb{% else %}#78716c{% endif %};padding:2px 8px;border-radius:10px">{{ l.score }}</b>
+      &nbsp;{{ l.direction }} · {{ l.source }}{% if l.changed %} · <b style="color:#b45309">изменён</b>{% endif %}
+    </div>
+    <a href="{{ l.url }}" style="font-size:15px;font-weight:bold;color:#1d4ed8;text-decoration:none">{{ l.title }}</a>
+    <table style="font-size:13px;margin-top:8px;border-collapse:collapse">
+      <tr><td style="color:#57534e;padding:2px 12px 2px 0">Организатор</td><td>{{ l.organizer }}</td></tr>
+      <tr><td style="color:#57534e;padding:2px 12px 2px 0">Срок подачи</td><td>{{ l.deadline }}</td></tr>
+      <tr><td style="color:#57534e;padding:2px 12px 2px 0">Бюджет</td><td>{{ l.budget }}</td></tr>
+    </table>
+    <p style="font-size:13px;margin:8px 0 0;color:#44403c">{{ l.explanation }}</p>
+  </div>
+  {% endmacro %}
+
+  {% if urgent %}
+    <h2 style="font-size:16px;margin:8px 0 12px;color:#b91c1c">Срок подачи в ближайшие {{ urgent_days }} дня</h2>
+    {% for l in urgent %}{{ card(l) }}{% endfor %}
+  {% endif %}
+  {% if rest %}
+    <h2 style="font-size:16px;margin:20px 0 12px">Остальные</h2>
+    {% for l in rest %}{{ card(l) }}{% endfor %}
+  {% endif %}
+
+  <p style="font-size:12px;color:#78716c;margin-top:20px">Сервис работает только с публичными данными и не подаёт заявки.</p>
+</div></body></html>

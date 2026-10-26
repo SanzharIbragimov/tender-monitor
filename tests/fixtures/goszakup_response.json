@@ -1,0 +1,268 @@
+{
+ "data": {
+  "Lots": [
+   {
+    "id": 7000011,
+    "lotNumber": "1",
+    "nameRu": "Разработка информационной системы учёта обращений граждан",
+    "nameKz": "",
+    "descriptionRu": "Разработка и внедрение веб-портала, интеграция с ГБД ФЛ, сопровождение системы 12 месяцев",
+    "descriptionKz": null,
+    "amount": 48500000,
+    "customerNameRu": "ГУ «Тестовый акимат города»",
+    "trdBuyId": 900001,
+    "trdBuyNumberAnno": "TEST-0001-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [
+     {
+      "refEnstruCode": "620110.000.000001"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900001,
+     "numberAnno": "TEST-0001-1",
+     "nameRu": "Разработка информационной системы учёта обращений граждан",
+     "orgNameRu": "ГУ «Тестовый акимат города»",
+     "publishDate": "2026-10-24 10:00:00",
+     "endDate": "2026-10-27 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000021,
+    "lotNumber": "1",
+    "nameRu": "Бумага офисная А4",
+    "nameKz": "",
+    "descriptionRu": "Бумага, ручки, канцелярские принадлежности",
+    "descriptionKz": null,
+    "amount": 1200000,
+    "customerNameRu": "КГУ «Тестовая школа №1»",
+    "trdBuyId": 900002,
+    "trdBuyNumberAnno": "TEST-0002-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [
+     {
+      "refEnstruCode": "172312.000.000002"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900002,
+     "numberAnno": "TEST-0002-1",
+     "nameRu": "Приобретение канцелярских товаров",
+     "orgNameRu": "КГУ «Тестовая школа №1»",
+     "publishDate": "2026-10-24 11:00:00",
+     "endDate": "2026-11-02 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000031,
+    "lotNumber": "1",
+    "nameRu": "Техническая поддержка и администрирование серверов",
+    "nameKz": "",
+    "descriptionRu": "Привлечение специалистов: системный администратор, инженер техподдержки, 2 человека на 6 месяцев",
+    "descriptionKz": null,
+    "amount": 15000000,
+    "customerNameRu": "РГП «Тестовый центр»",
+    "trdBuyId": 900003,
+    "trdBuyNumberAnno": "TEST-0003-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [
+     {
+      "refEnstruCode": "620920.000.000003"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900003,
+     "numberAnno": "TEST-0003-1",
+     "nameRu": "Услуги по технической поддержке и администрированию серверов",
+     "orgNameRu": "РГП «Тестовый центр»",
+     "publishDate": "2026-10-23 09:00:00",
+     "endDate": "2026-11-06 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000041,
+    "lotNumber": "1",
+    "nameRu": "",
+    "nameKz": "Ақпараттық жүйені әзірлеу және енгізу",
+    "descriptionRu": null,
+    "descriptionKz": "Мобильді қосымша мен ақпараттық жүйені әзірлеу",
+    "amount": 30000000,
+    "customerNameRu": "ГУ «Тестовое управление цифровизации»",
+    "trdBuyId": 900004,
+    "trdBuyNumberAnno": "TEST-0004-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [],
+    "TrdBuy": {
+     "id": 900004,
+     "numberAnno": "TEST-0004-1",
+     "nameRu": "Ақпараттық жүйені әзірлеу",
+     "orgNameRu": "ГУ «Тестовое управление цифровизации»",
+     "publishDate": "2026-10-24 12:00:00",
+     "endDate": "2026-11-10 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000051,
+    "lotNumber": "1",
+    "nameRu": "Заправка картриджей",
+    "nameKz": "",
+    "descriptionRu": "Заправка картриджей, ремонт оргтехники",
+    "descriptionKz": null,
+    "amount": 800000,
+    "customerNameRu": "КГУ «Тестовая поликлиника»",
+    "trdBuyId": 900005,
+    "trdBuyNumberAnno": "TEST-0005-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [],
+    "TrdBuy": {
+     "id": 900005,
+     "numberAnno": "TEST-0005-1",
+     "nameRu": "Заправка картриджей и ремонт оргтехники",
+     "orgNameRu": "КГУ «Тестовая поликлиника»",
+     "publishDate": "2026-10-24 13:00:00",
+     "endDate": "2026-11-01 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000061,
+    "lotNumber": "1",
+    "nameRu": "Лицензии программного обеспечения СЭД, настройка системы и внедрение",
+    "nameKz": "",
+    "descriptionRu": "Поставка лицензий, настройка и внедрение системы электронного документооборота, обучение пользователей",
+    "descriptionKz": null,
+    "amount": 22000000,
+    "customerNameRu": "АО «Тестовая национальная компания»",
+    "trdBuyId": 900006,
+    "trdBuyNumberAnno": "TEST-0006-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [
+     {
+      "refEnstruCode": "582912.000.000004"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900006,
+     "numberAnno": "TEST-0006-1",
+     "nameRu": "Приобретение лицензий программного обеспечения и внедрение СЭД",
+     "orgNameRu": "АО «Тестовая национальная компания»",
+     "publishDate": "2026-10-22 15:00:00",
+     "endDate": "2026-11-20 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   },
+   {
+    "id": 7000099,
+    "lotNumber": "1",
+    "nameRu": "Разработка веб-портала (приём завершён)",
+    "nameKz": "",
+    "descriptionRu": "Разработка и внедрение веб-портала, интеграция с ГБД ФЛ, сопровождение системы 12 месяцев",
+    "descriptionKz": null,
+    "amount": 48500000,
+    "customerNameRu": "ГУ «Тестовый акимат города»",
+    "trdBuyId": 900001,
+    "trdBuyNumberAnno": "TEST-0001-1",
+    "refLotStatusId": 240,
+    "isDeleted": 0,
+    "Plans": [
+     {
+      "refEnstruCode": "620110.000.000001"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900099,
+     "numberAnno": "TEST-0001-1",
+     "nameRu": "Разработка информационной системы учёта обращений граждан",
+     "orgNameRu": "ГУ «Тестовый акимат города»",
+     "publishDate": "2026-10-24 10:00:00",
+     "endDate": "2026-10-20 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Завершено"
+     }
+    }
+   },
+   {
+    "id": 7000098,
+    "lotNumber": "1",
+    "nameRu": "Разработка информационной системы учёта обращений граждан",
+    "nameKz": "",
+    "descriptionRu": "Разработка и внедрение веб-портала, интеграция с ГБД ФЛ, сопровождение системы 12 месяцев",
+    "descriptionKz": null,
+    "amount": 48500000,
+    "customerNameRu": "ГУ «Тестовый акимат города»",
+    "trdBuyId": 900001,
+    "trdBuyNumberAnno": "TEST-0001-1",
+    "refLotStatusId": 240,
+    "isDeleted": 1,
+    "Plans": [
+     {
+      "refEnstruCode": "620110.000.000001"
+     }
+    ],
+    "TrdBuy": {
+     "id": 900001,
+     "numberAnno": "TEST-0001-1",
+     "nameRu": "Разработка информационной системы учёта обращений граждан",
+     "orgNameRu": "ГУ «Тестовый акимат города»",
+     "publishDate": "2026-10-24 10:00:00",
+     "endDate": "2026-10-27 18:00:00",
+     "kato": [
+      "711210000"
+     ],
+     "RefBuyStatus": {
+      "nameRu": "Опубликовано (прием заявок)"
+     }
+    }
+   }
+  ]
+ },
+ "extensions": {
+  "pageInfo": {
+   "hasNextPage": false,
+   "lastId": 7000098
+  }
+ }
+}
